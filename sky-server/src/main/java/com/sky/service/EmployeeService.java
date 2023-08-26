@@ -21,4 +21,8 @@ public interface EmployeeService {
     PageResult pageQueryEmploee(EmployeePageQueryDTO employeePageQueryDTO);
 
     void startorabondon(int status, long id);
+
+    Employee selectById(long id);
+
+    void editEmployee(EmployeeDTO employeeDTO);
 }

@@ -103,4 +103,22 @@ public class EmployeeController {
         employeeService.startorabondon(status,id);
         return Result.success();
     }
+    @ApiOperation("根据id查询员工信息")
+    @GetMapping("{id}")
+    public Result<Employee> getemploeebyid(@PathVariable long id){
+        log.info("员工修改");
+        Employee employee=employeeService.selectById(id);
+        return Result.success(employee);
+    }
+
+    @PutMapping
+    @ApiOperation("员工编辑窗口")
+    public Result editEmployee(@RequestBody EmployeeDTO employeeDTO){
+
+        employeeService.editEmployee(employeeDTO);
+
+        return Result.success();
+
+    }
+
 }
