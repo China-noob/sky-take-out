@@ -6,6 +6,12 @@ import com.sky.dto.EmployeePageQueryDTO;
 import com.sky.entity.Employee;
 import com.sky.result.PageResult;
 
+/*
+ *
+
+ * @author lpl
+ * @create 2023/8/26
+ **/
 public interface EmployeeService {
 
     /**
@@ -24,5 +30,6 @@ public interface EmployeeService {
 
     Employee selectById(long id);
 
+    
     void editEmployee(EmployeeDTO employeeDTO);
 }
