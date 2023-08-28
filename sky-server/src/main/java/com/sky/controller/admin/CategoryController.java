@@ -35,17 +35,22 @@ public class CategoryController {
         categoryService.addCategory(categoryDTO);
         return Result.success();
     }
+
     @GetMapping("/page")
     @ApiOperation("菜品分类查询接口")
     public Result<PageResult> pageQuerycategory(CategoryPageQueryDTO categoryPageQueryDTO){
         PageResult pageResultResult=categoryService.pageQuerycategory(categoryPageQueryDTO);
         return Result.success(pageResultResult);
     }
+
+
     @PostMapping("/status/{status}")
     @ApiOperation("菜品状态修改接口")
     public Result update(@PathVariable int status, long id){
         categoryService.update(id,status);
         return  Result.success();
     }
+
+    @PutMapping()
 
 }
