@@ -5,6 +5,7 @@ import com.sky.dto.CategoryPageQueryDTO;
 import com.sky.entity.Category;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Update;
 
 @Mapper
 public interface CategoryMapper {
@@ -14,4 +15,7 @@ public interface CategoryMapper {
     void addCategoly(Category category);
 
     Page<Category> pageQuerycategory(CategoryPageQueryDTO categoryPageQueryDTO);
+
+
+    void update(Category category);
 }

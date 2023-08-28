@@ -42,5 +42,10 @@ public class CategoryController {
         return Result.success(pageResultResult);
     }
     @PostMapping("/status/{status}")
+    @ApiOperation("菜品状态修改接口")
+    public Result update(@PathVariable int status, long id){
+        categoryService.update(id,status);
+        return  Result.success();
+    }
 
 }
