@@ -41,6 +41,6 @@ public class CategoryController {
         PageResult pageResultResult=categoryService.pageQuerycategory(categoryPageQueryDTO);
         return Result.success(pageResultResult);
     }
-
+    @PostMapping("/status/{status}")
 
 }
