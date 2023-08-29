@@ -52,5 +52,9 @@ public class CategoryController {
     }
 
     @PutMapping()
-
+    @ApiOperation("菜品分类修改接口")
+    public Result alter(@RequestBody CategoryDTO categoryDTO){
+        categoryService.alter(categoryDTO);
+        return Result.success();
+    }
 }
