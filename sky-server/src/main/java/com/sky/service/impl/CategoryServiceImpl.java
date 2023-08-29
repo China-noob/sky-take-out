@@ -73,4 +73,9 @@ public class CategoryServiceImpl implements CategoryService {
         BeanUtils.copyProperties(categoryDTO,category);
         categoryMapper.update(category);
     }
+
+    @Override
+    public void delete(int id) {
+        categoryMapper.delete(id);
+    }
 }

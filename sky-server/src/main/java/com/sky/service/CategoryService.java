@@ -13,4 +13,6 @@ public interface CategoryService {
     void update(long id, int status);
 
     void alter(CategoryDTO categoryDTO);
+
+    void delete(int id);
 }

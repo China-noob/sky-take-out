@@ -57,4 +57,12 @@ public class CategoryController {
         categoryService.alter(categoryDTO);
         return Result.success();
     }
+
+    @DeleteMapping
+    @ApiOperation("删除菜品分类接口")
+    public Result delete(int id){
+        categoryService.delete(id);
+        return  Result.success();
+    }
+
 }
