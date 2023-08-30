@@ -17,7 +17,5 @@
             <if test="status!=null">and dish.status=#{status}</if>
         </where>
     </select>
-    <delete id="delete">
 
-    </delete>
 </mapper>

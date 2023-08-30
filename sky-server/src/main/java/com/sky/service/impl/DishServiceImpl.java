@@ -68,7 +68,14 @@ public class DishServiceImpl implements DishService {
         //获取id
         String[] split = ids.split(",");
         for (String i:split){
-            dishMapper.delete(Integer.parseInt(i));
+            //找到不是在起售中，不关联套餐
+            //不是在起售中
+            if(dishMapper.concate(Integer.parseInt(i))!=0){
+                dishMapper.delete(Integer.parseInt(i));
+                dishFlavorMapper.delete(Integer.parseInt(i));
+            }
+
+
         }
     }
 }
