@@ -6,6 +6,7 @@ import com.sky.context.BaseContext;
 import com.sky.dto.CategoryDTO;
 import com.sky.dto.CategoryPageQueryDTO;
 import com.sky.entity.Category;
+import com.sky.entity.Dish;
 import com.sky.entity.Employee;
 import com.sky.mapper.CategoryMapper;
 import com.sky.result.PageResult;
@@ -77,5 +78,13 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public void delete(int id) {
         categoryMapper.delete(id);
+    }
+
+    @Override
+    public List<Dish> list(int type) {
+        Category category=new Category();
+        category.setType(type);
+        List<Dish> dishes=categoryMapper.list(category);
+        return dishes;
     }
 }
