@@ -8,6 +8,6 @@ sky:
     password: root
   alioss:
     endpoint: oss-cn-hangzhou.aliyuncs.com
-    access-key-id: 
-    access-key-secret: 
+    access-key-id: LTAI5tPvKrZLmNtKGYjR8Wtg
+    access-key-secret: vI0IfYwG9Xej1l8hw8zm0Z0hvCm3qQ
     bucket-name: typorabed-lpl
