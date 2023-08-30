@@ -6,4 +6,18 @@
         insert into dish (name, category_id, price, image, description, create_time, update_time, create_user,update_user, status)
         values (#{name}, #{categoryId}, #{price}, #{image}, #{description}, #{createTime}, #{updateTime}, #{createUser}, #{updateUser}, #{status})
     </insert>
+    <select id="page" resultType="com.sky.vo.DishVO">
+        select dish.id as id ,dish.name as name,dish.category_id as category_id, category.name as categoryName ,dish.price as price, dish.image as image ,
+               dish.description as description ,dish.status as status , dish.update_time as update_time
+        from dish
+                 left join category on dish.category_id = category.id
+        <where>
+
+            <if test="name!=null">dish.name like concat('%',#{name},'%') </if>
+            <if test="status!=null">and dish.status=#{status}</if>
+        </where>
+    </select>
+    <delete id="delete">
+
+    </delete>
 </mapper>
