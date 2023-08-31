@@ -11,6 +11,8 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
+
 @Mapper
 public interface DishMapper {
     @AutoFill(value = OperationType.INSERT)
@@ -26,4 +28,13 @@ public interface DishMapper {
 
     @Select("select count(0) from dish where status = 0 and id=#{id}")
     int concate(int id);
+
+    @Select("select  category.name as categoryName,dish.category_id as categoryId,dish.description as description ,dish.id as id,dish.image as image, dish.name as name ,dish.price as price ,dish.status as status,dish.update_time as updateTime from dish,category where dish.id=60 and dish.category_id=category.id")
+    DishVO selectById(int id);
+
+    @AutoFill(value = OperationType.UPDATE)
+    void update(Dish dish);
+
+    @Select("select * from dish where category_id=#{id}")
+    List<Dish> selectDishByCategoryId(long id);
 }
