@@ -11,3 +11,7 @@ sky:
     access-key-id: LTAI5tPvKrZLmNtKGYjR8Wtg
     access-key-secret: vI0IfYwG9Xej1l8hw8zm0Z0hvCm3qQ
     bucket-name: typorabed-lpl
+  redis:
+    host: localhost
+    port: 6379
+    database: 10
