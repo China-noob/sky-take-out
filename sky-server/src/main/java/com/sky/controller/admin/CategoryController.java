@@ -2,6 +2,7 @@ package com.sky.controller.admin;
 
 import com.sky.dto.CategoryDTO;
 import com.sky.dto.CategoryPageQueryDTO;
+import com.sky.entity.Category;
 import com.sky.entity.Dish;
 import com.sky.properties.JwtProperties;
 import com.sky.result.PageResult;
@@ -69,8 +70,8 @@ public class CategoryController {
     }
     @GetMapping("/list")
     @ApiOperation("菜品分类")
-    public Result<List<Dish>> categorySort(int type){
-        List<Dish> dishes=categoryService.list(type);
+    public Result<List<Category>> categorySort(int type){
+        List<Category> dishes=categoryService.list(type);
         return  Result.success(dishes);
     }
 

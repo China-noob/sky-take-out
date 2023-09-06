@@ -81,10 +81,11 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public List<Dish> list(int type) {
-        Category category=new Category();
-        category.setType(type);
-        List<Dish> dishes=categoryMapper.list(category);
+    public List<Category> list(Integer type) {
+
+        List<Category> dishes=categoryMapper.list(type);
         return dishes;
     }
+
+
 }

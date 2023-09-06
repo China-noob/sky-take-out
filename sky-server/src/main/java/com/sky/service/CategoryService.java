@@ -2,6 +2,7 @@ package com.sky.service;
 
 import com.sky.dto.CategoryDTO;
 import com.sky.dto.CategoryPageQueryDTO;
+import com.sky.entity.Category;
 import com.sky.entity.Dish;
 import com.sky.result.PageResult;
 import com.sky.result.Result;
@@ -19,5 +20,7 @@ public interface CategoryService {
 
     void delete(int id);
 
-    List<Dish> list(int type);
+    List<Category> list(Integer type);
+
+
 }
